@@ -1,7 +1,7 @@
 /*
- * The purpose of this program is to create a musical playlist in the form of a XML file that user's can display, search or add to. 
+ * The purpose of this program is to create a music playlist in the form of an XML file that users can display, search or add to. 
  * By using the concept of java's Elements and Element in terms of parent and child elements. 
- * The hierarchy starts off with "music" as the root, then goes into playlist which is filled with different songs with information on the artist, album and the song’s name.
+ * The hierarchy starts off with "music" as the root, then goes into a playlist which is filled with different songs with information on the artist, album and the songâ€™s name.
  * Created by Yolanda Yu
  * Last Modified on 05/26/2017
  */
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import nu.xom.*;
 
-//music, play list, artist, album
+//music, playlist, artist, album
 
 public class XMLApplication
 {
@@ -40,7 +40,7 @@ public class XMLApplication
     Scanner one = new Scanner(System.in);
     String response = one.nextLine();
 
-    // if the user answered yes, the the program asks what the user wants to do,
+    // if the user answered yes, then the program asks what the user wants to do,
     // if answered no then the program closes
     if (response.equalsIgnoreCase("Yes"))
     {
@@ -67,7 +67,7 @@ public class XMLApplication
         + "   Add- add a new song to the playlist" + "\n" + "   Exit- exit the program");
 
     Scanner two = new Scanner(System.in);
-    String input = two.nextLine(); // the user’s answer
+    String input = two.nextLine(); // the userâ€™s answer
 
     // depending on the response, the program will call its respective method to
     // perform the certain action.
@@ -160,24 +160,24 @@ public class XMLApplication
   }
 
   // This method lets the user add a new song to their playlist by inputting the
-  // song’s artist, album and title. The structure is created by adding these
+  // songâ€™s artist, album and title. The structure is created by adding these
   // sub-elements to the main playlist element
   public static void addSong()
   {
 
-    // uses a scanner to get the user’s inputs
+    // uses a scanner to get the userâ€™s inputs
     Scanner four = new Scanner(System.in);
     Element song = new Element("song");
     playlist.appendChild(song); // playlist is the parent of song
 
     System.out.println("Input the new song's artist");
-    String artistName = four.nextLine(); // user’s input
+    String artistName = four.nextLine(); // userâ€™s input
     Element artist = new Element("artist");
     artist.appendChild(artistName); // putting artistName in artist
     song.appendChild(artist); // artist is a sub-element of song
 
     System.out.println("Input the new song's album");
-    String albumName = four.nextLine(); // user’s input
+    String albumName = four.nextLine(); // userâ€™s input
     Element album = new Element("album");
     album.appendChild(albumName); // assigning albumName to album
     song.appendChild(album); // album is a sub-element of song
@@ -230,7 +230,7 @@ public class XMLApplication
   // Replacing/overriding the old document with the new one
   public static void writeFile()
   {
-    // try-catch block that either finds or creates a XML file with a specific
+    // try-catch block that either finds or creates an XML file with a specific
     // name, if an error occurs then catch it and display an error message to
     // the user
     try
